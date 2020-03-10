@@ -81,7 +81,7 @@ if(!empty($_POST)){
       // DBへ接続
       $dbh = dbConnect();
       // SQL文作成
-      $sql = 'UPDATE users  SET username = :u_name, tel = :tel, zip = :zip, addr = :addr, age = :age, email = :email, pic = :pic WHERE id = :u_id';
+      $sql = 'UPDATE users SET username = :u_name, age = :age, tel = :tel, zip = :zip, addr = :addr, email = :email, pic = :pic WHERE id = :u_id';
       $data = array(':u_name' => $username , ':tel' => $tel, ':zip' => $zip, ':addr' => $addr, ':age' => $age, ':email' => $email, ':pic' => $pic, ':u_id' => $dbFormData['id']);
       // クエリ実行
       $stmt = queryPost($dbh, $sql, $data);
