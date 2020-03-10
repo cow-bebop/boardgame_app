@@ -110,8 +110,8 @@ if(!empty($_POST)){
         $data = array(':name' => $name , ':category' => $category, ':price' => $price, ':comment' => $comment, ':pic1' => $pic1, ':pic2' => $pic2, ':pic3' => $pic3, ':u_id' => $_SESSION['user_id'], ':p_id' => $p_id);
       }else{
         debug('DB新規登録です。');
-        $sql = 'insert into product (name, category_id, price, comment, pic1, pic2, pic3, user_id, create_date ) values (:name, :category, :price, :comment,  :pic1, :pic2, :pic3, :u_id, :date)';
-        $data = array(':name' => $name , ':category' => $category, ':price' => $price, ':comment' => $comment, ':pic1' => $pic1, ':pic2' => $pic2, ':pic3' => $pic3, ':u_id' => $_SESSION['user_id'], ':date' => date('Y-m-d H:i:s'));
+        $sql = 'INSERT INTO product (name, category_id, comment, price, pic1, pic2, pic3, user_id, create_date ) VALUES (:name, :category, :comment, :price, :pic1, :pic2, :pic3, :u_id, :date)';
+        $data = array(':name' => $name , ':category' => $category, ':comment' => $comment, ':price' => $price, ':pic1' => $pic1, ':pic2' => $pic2, ':pic3' => $pic3, ':u_id' => $_SESSION['user_id'], ':date' => date('Y-m-d H:i:s'));
       }
       debug('SQL：'.$sql);
       debug('流し込みデータ：'.print_r($data,true));
@@ -147,7 +147,7 @@ require('head.php');
 
     <!-- メインコンテンツ -->
     <div id="contents" class="site-width">
-      <h1 class="page-title"><?php echo (!$edit_flg) ? '商品を出品する' : '商品を編集する'; ?></h1>
+      <h1 class="page-title"><?php echo (!$edit_flg) ? 'ゲームを出品する' : 'ゲームを編集する'; ?></h1>
       <!-- Main -->
       <section id="main" >
         <div class="form-container">
@@ -158,7 +158,7 @@ require('head.php');
               ?>
             </div>
             <label class="<?php if(!empty($err_msg['name'])) echo 'err'; ?>">
-              商品名<span class="label-require">必須</span>
+              ゲーム名<span class="label-require">必須</span>
               <input type="text" name="name" value="<?php echo getFormData('name'); ?>">
             </label>
             <div class="area-msg">
@@ -209,7 +209,7 @@ require('head.php');
             </div>
             <div style="overflow:hidden;">
               <div class="imgDrop-container">
-                画像1
+                画像1（メイン画像）
                 <label class="area-drop <?php if(!empty($err_msg['pic1'])) echo 'err'; ?>">
                   <input type="hidden" name="MAX_FILE_SIZE" value="3145728">
                   <input type="file" name="pic1" class="input-file">

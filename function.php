@@ -52,7 +52,7 @@ function debugLogStart(){
 //================================
 //エラーメッセージを定数に設定
 define('MSG01','入力必須です');
-define('MSG02', 'Emailの形式で入力してください');
+define('MSG02','Emailの形式で入力してください');
 define('MSG03','パスワード（再入力）が合っていません');
 define('MSG04','半角英数字のみご利用いただけます');
 define('MSG05','6文字以上で入力してください');
@@ -238,7 +238,7 @@ function dbConnect(){
   $password = 'root';
   $options = array(
     // SQL実行失敗時にはエラーコードのみ設定
-    PDO::ATTR_ERRMODE => PDO::ERRMODE_SILENT,
+    PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
     // デフォルトフェッチモードを連想配列形式に設定
     PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
     // バッファードクエリを使う(一度に結果セットをすべて取得し、サーバー負荷を軽減)
@@ -386,8 +386,7 @@ function getProductOne($p_id){
     // DBへ接続
     $dbh = dbConnect();
     // SQL文作成
-    $sql = 'SELECT p.id , p.name , p.comment, p.price, p.pic1, p.pic2, p.pic3, p.user_id, p.create_date, p.update_date, c.name AS category 
-             FROM product AS p LEFT JOIN category AS c ON p.category_id = c.id WHERE p.id = :p_id AND p.delete_flg = 0 AND c.delete_flg = 0';
+    $sql = 'SELECT p.id, p.name, p.comment, p.price, p.pic1, p.pic2, p.pic3, p.user_id, p.create_date, p.update_date, c.name AS category FROM product AS p LEFT JOIN category AS c ON p.category_id = c.id WHERE p.id = :p_id AND p.delete_flg = 0 AND c.delete_flg = 0';
     $data = array(':p_id' => $p_id);
     // クエリ実行
     $stmt = queryPost($dbh, $sql, $data);
@@ -435,7 +434,7 @@ function getMsgsAndBord($id){
     // DBへ接続
     $dbh = dbConnect();
     // SQL文作成
-    $sql = 'SELECT m.id AS m_id, product_id, bord_id, send_date, to_user, from_user, sale_user, buy_user, msg, b.create_date FROM message AS m RIGHT JOIN bord AS b ON b.id = m.bord_id WHERE b.id = :id AND m.delete_flg = 0 ORDER BY send_date ASC';
+    $sql = 'SELECT b.id, b.sale_user, b.buy_user, b.product_id, b.create_date, m.id, m.bord_id, m.send_date, m.to_user, m.from_user, m.msg FROM bord AS b LEFT JOIN message AS m ON m.bord_id = b.id WHERE b.id = :id AND b.delete_flg = 0 ORDER BY send_date ASC';
     $data = array(':id' => $id);
     // クエリ実行
     $stmt = queryPost($dbh, $sql, $data);
@@ -654,6 +653,7 @@ function uploadImg($file, $key){
           case UPLOAD_ERR_NO_FILE:   // ファイル未選択の場合
               throw new RuntimeException('ファイルが選択されていません');
           case UPLOAD_ERR_INI_SIZE:  // php.ini定義の最大サイズが超過した場合
+              throw new RuntimeException('ファイルサイズが大きすぎます');
           case UPLOAD_ERR_FORM_SIZE: // フォーム定義の最大サイズ超過した場合
               throw new RuntimeException('ファイルサイズが大きすぎます');
           default: // その他の場合

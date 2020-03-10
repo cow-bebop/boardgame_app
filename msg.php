@@ -105,7 +105,7 @@ debug('画面表示処理終了 <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 ?>
 <?php
 $siteTitle = '連絡掲示板';
-require('head.php'); 
+require('head.php');
 ?>
 
   <body class="page-msg page-1colum">
