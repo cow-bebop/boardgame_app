@@ -69,14 +69,6 @@
   }
 }
 
-.u-sp_sm {
-  display: none;
-
-  @include sp_sm {
-    display: inline;
-  }
-}
-
 .u-clearfix:after {
   content: " ";
   display: block;

@@ -1,11 +1,9 @@
 @charset "UTF-8";
 
-$header: 1150px;
-$pc: 980px;
+$large: 1200px;
+$pc: 992px;
 $tab: 768px;
-$top: 700px;
-$sp: 640px;
-$sp_sm: 450px;
+$sp: 576px;
 
 $font-primary: "游ゴシック",
 "Yu Gothic",
@@ -38,14 +36,14 @@ $color-gray: #666666;
 $color-black: #333;
 
 
-@mixin pc {
-  @media screen and (max-width: ($pc)) {
+@mixin large {
+  @media screen and (max-width: ($large)) {
     @content;
   }
 }
 
-@mixin header {
-  @media screen and (max-width: ($header)) {
+@mixin pc {
+  @media screen and (max-width: ($pc)) {
     @content;
   }
 }
@@ -56,20 +54,8 @@ $color-black: #333;
   }
 }
 
-@mixin top {
-  @media screen and (max-width: ($top)) {
-    @content;
-  }
-}
-
 @mixin sp {
   @media screen and (max-width: ($sp)) {
-    @content;
-  }
-}
-
-@mixin sp_sm {
-  @media screen and (max-width: ($sp_sm)) {
     @content;
   }
 }

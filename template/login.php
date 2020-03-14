@@ -114,9 +114,7 @@ require('head.php');
 
       <!-- Main -->
       <section id="main" >
-
        <div class="form-container">
-        
          <form action="" method="post" class="form">
            <h2 class="title">ログイン</h2>
            <div class="area-msg">

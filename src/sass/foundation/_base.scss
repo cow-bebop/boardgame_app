@@ -12,7 +12,7 @@ html ----------------------------------------------------------*/
 }
 
 body {
-  color: #000;
+  color: #444;
   margin: 0;
   padding: 0;
   background: #ffffff;
@@ -22,29 +22,22 @@ body {
   font-size: 100%;
   -webkit-text-size-adjust: none;
   position: relative;
+  line-height: 150%;
 
-  @include header {
-    color: #000;
+  @include large {
+    color: #444;
   }
 
   @include pc {
-    color: #000;
+    color: #444;
   }
 
   @include tab {
-    color: #000;
-  }
-
-  @include top {
-    color: #000;
+    color: #444;
   }
 
   @include sp {
-    color: #000;
-  }
-
-  @include sp_sm {
-    color: #000;
+    color: #444;
   }
 }
 

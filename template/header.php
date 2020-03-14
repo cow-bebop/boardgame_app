@@ -1,6 +1,6 @@
 <header>
-  <div class="site-width">
-    <h1><a href="index.php">ボードゲーム</a></h1>
+  <div class="site-width header-flex">
+    <h1><a href="productList.php"><img src="common/img/logo.png" alt=""></a></h1>
     <nav id="top-nav">
       <ul>
         <?php
