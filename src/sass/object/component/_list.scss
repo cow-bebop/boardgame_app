@@ -1,0 +1,39 @@
+@import "../../foundation/_mediaqueries";
+
+/*========================================
+  リスト
+========================================*/
+
+.list>.title {
+  padding-left: 10px;
+  border-left: 6px solid #b6a489;
+}
+
+.panel-list {
+  overflow: hidden;
+  margin-right: -15px;
+}
+
+.panel-list>.panel {
+  float: left;
+  box-sizing: border-box;
+  margin-bottom: 15px;
+  padding-right: 15px;
+  min-height: 185px;
+  width: 25%;
+  color: #333;
+  text-decoration: none;
+  line-height: 1.2em;
+}
+
+a.panel:hover {
+  text-decoration: underline;
+}
+
+.panel-list>.panel img {
+  width: 100%;
+}
+
+.panel-list>.panel .panel-title {
+  margin: 0;
+}

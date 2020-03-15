@@ -1,5 +1,24 @@
 @import "../../foundation/_mediaqueries";
 
 
-/* btn
-===============================================================*/
+/*========================================
+  ボタン
+========================================*/
+
+.btn {
+  padding: 15px 20px;
+  text-decoration: none;
+}
+
+.btn:hover {
+  text-decoration: none;
+}
+
+.btn.btn-primary {
+  background: #b6a489;
+  color: white;
+}
+
+.btn.btn-mid {
+  max-width: 150px;
+}

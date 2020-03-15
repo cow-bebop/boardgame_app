@@ -269,20 +269,6 @@ tt {
   line-height: 100%;
 }
 
-#yui3-css-stamp.cssfonts {
-  display: none;
-}
-
-/* header
-===============================================================*/
-/* nav
-===============================================================*/
-/* layout
-===============================================================*/
-/* btn
-===============================================================*/
-/* nav
-===============================================================*/
 /*========================================
   フォント
 ========================================*/
@@ -296,9 +282,20 @@ tt {
   font-weight: bold;
 }
 
-/*トップバナー*/
-#top-baner {
+/*========================================
+  フッター
+========================================*/
+footer {
   width: 100%;
+  padding: 15px;
+  background: #333;
+  color: #f6f5f5;
+  font-size: 12px;
+  text-align: center;
+}
+
+footer a {
+  color: #f6f5f5;
 }
 
 /*========================================
@@ -326,39 +323,6 @@ header h1 {
 }
 
 /*========================================
-  ナビゲーション
-========================================*/
-#top-nav {
-  width: 500px;
-  height: 90px;
-}
-
-nav a {
-  padding: 10px 15px;
-  color: white;
-  font-size: 14px;
-  font-weight: bold;
-  text-decoration: none;
-}
-
-nav a:hover {
-  text-decoration: underline;
-}
-
-#top-nav ul {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: end;
-      -ms-flex-pack: end;
-          justify-content: flex-end;
-  width: 450px;
-  height: 80px;
-  line-height: 80px;
-  list-style: none;
-}
-
-/*========================================
   レイアウト
 ========================================*/
 .site-width {
@@ -375,7 +339,7 @@ nav a:hover {
 }
 
 .page-2colum #main {
-  width: 760px;
+  max-width: 760px;
 }
 
 .page-logined #main {
@@ -387,6 +351,7 @@ nav a:hover {
 section h1.title,
 section h2.title {
   font-family: 'Montserrat', sans-serif;
+  font-size: 1.3em;
   text-align: center;
 }
 
@@ -410,11 +375,10 @@ section h2.title {
 #sidebar {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  width: 200px;
+  max-width: 300px;
   min-height: 600px;
   margin-right: 20px;
   padding: 15px;
-  float: left;
   background: #f6f5f4;
 }
 
@@ -462,24 +426,57 @@ section h2.title {
 }
 
 /*========================================
-  フッター
+  ボタン
 ========================================*/
-footer {
-  width: 100%;
-  padding: 15px;
-  background: #333;
-  color: #f6f5f5;
-  font-size: 12px;
-  text-align: center;
+.btn {
+  padding: 15px 20px;
+  text-decoration: none;
 }
 
-footer a {
-  color: #f6f5f5;
+.btn:hover {
+  text-decoration: none;
 }
 
-/*contact*/
-#contact {
-  margin-bottom: 150px;
+.btn.btn-primary {
+  background: #b6a489;
+  color: white;
+}
+
+.btn.btn-mid {
+  max-width: 150px;
+}
+
+/*========================================
+  ナビゲーション
+========================================*/
+#top-nav {
+  width: 500px;
+  height: 90px;
+}
+
+nav a {
+  padding: 10px 15px;
+  color: white;
+  font-size: 14px;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
+
+#top-nav ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  width: 450px;
+  height: 80px;
+  line-height: 80px;
+  list-style: none;
 }
 
 /*========================================
@@ -612,27 +609,6 @@ a.panel:hover {
 .list-table > .table > tbody td {
   border-right: none;
   background: #f6f5f4;
-}
-
-/*========================================
-  ボタン
-========================================*/
-.btn {
-  padding: 15px 20px;
-  text-decoration: none;
-}
-
-.btn:hover {
-  text-decoration: none;
-}
-
-.btn.btn-primary {
-  background: #b6a489;
-  color: white;
-}
-
-.btn.btn-mid {
-  max-width: 150px;
 }
 
 /*========================================
@@ -797,6 +773,34 @@ input[type="submit"]:hover {
   top: 40px;
   padding-left: 10px;
   float: left;
+}
+
+/*トップページ*/
+.top-msg {
+  margin: 30px 0;
+  color: #364f6b;
+  font-size: 24px;
+  text-align: center;
+}
+
+/*マイページ*/
+.mypage {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+/*商品一覧ページ*/
+#top-baner {
+  width: 100%;
+}
+
+/*contact*/
+#contact {
+  margin-bottom: 150px;
 }
 
 /*========================================

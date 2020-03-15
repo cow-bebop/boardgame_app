@@ -742,7 +742,7 @@ function pagination( $currentPageNum, $totalPageNum, $link = '', $pageColNum = 5
 //画像表示用関数
 function showImg($path){
   if(empty($path)){
-    return 'img/sample-img.png';
+    return 'common/img/sample-img.png';
   }else{
     return $path;
   }

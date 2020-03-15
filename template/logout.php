@@ -10,6 +10,6 @@ debugLogStart();
 debug('ログアウトします。');
 // セッションを削除（ログアウトする）
 session_destroy();
-debug('ログインページへ遷移します。');
-// ログインページへ
-header("Location:login.php");
+debug('トップページへ遷移します。');
+// トップページへ
+header("Location:index.php");

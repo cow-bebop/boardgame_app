@@ -1,5 +1,56 @@
 @import "../foundation/_mediaqueries";
 
+/*========================================
+  レイアウト
+========================================*/
 
-/* layout
-===============================================================*/
+
+.site-width {
+  margin: 0 auto;
+  max-width: 992px;
+
+  @include pc {
+    width: 100%;
+    padding: 0 1em;
+  }
+}
+
+#main {
+  min-height: 600px;
+}
+
+.page-1colum #main {
+  width: 100%;
+}
+
+.page-2colum #main {
+  max-width: 760px;
+}
+
+.page-logined #main {
+  box-sizing: border-box;
+  border: 5px solid #f1f1f1;
+}
+
+section h1.title,
+section h2.title {
+  text-align: center;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.3em;
+}
+
+
+#contents {
+  overflow: hidden;
+  margin: 20px auto;
+}
+
+/* ページタイトル */
+
+.page-title {
+  margin-bottom: 50px;
+  padding-top: 20px;
+  /* Lesson14にて追加 */
+  text-align: center;
+  font-size: 32px;
+}

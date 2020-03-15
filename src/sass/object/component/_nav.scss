@@ -1,4 +1,30 @@
 @import "../../foundation/_mediaqueries";
 
-/* nav
-===============================================================*/
+/*========================================
+  ナビゲーション
+========================================*/
+#top-nav {
+  width: 500px;
+  height: 90px;
+}
+
+nav a {
+  padding: 10px 15px;
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
+
+#top-nav ul {
+  display: flex;
+  justify-content: flex-end;
+  width: 450px;
+  height: 80px;
+  list-style: none;
+  line-height: 80px;
+}

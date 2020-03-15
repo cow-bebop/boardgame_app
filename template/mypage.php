@@ -58,8 +58,10 @@ require('head.php');
       <h1 class="page-title">MYPAGE</h1>
 
       <!-- Main -->
-      <section id="main" >
-         <section class="list panel-list">
+      <div class="mypage">
+      
+      <section id="main">
+         <section class="list panel-list u-mb2em">
            <h2 class="title" style="margin-bottom:15px;">
             登録商品一覧
            </h2>
@@ -81,13 +83,7 @@ require('head.php');
             ?>
          </section>
          
-         <style>
-           .list{
-             margin-bottom: 30px;
-           }
-        </style>
-         
-        <section class="list list-table">
+        <section class="list list-table u-mb2em">
           <h2 class="title">
             連絡掲示板一覧
           </h2>
@@ -155,6 +151,7 @@ require('head.php');
       <?php
         require('sidebar_mypage.php');
       ?>
+      </div>
     </div>
 
     <!-- footer -->

@@ -27,6 +27,15 @@ tt {
   line-height: 100%
 }
 
-#yui3-css-stamp.cssfonts {
-  display: none
+/*========================================
+  フォント
+========================================*/
+.num {
+  font-family: 'Montserrat', sans-serif;
+}
+
+.price {
+  display: block;
+  font-weight: bold;
+  font-family: 'Montserrat', sans-serif;
 }

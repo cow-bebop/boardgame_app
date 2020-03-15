@@ -14,7 +14,7 @@ if( !empty($_SESSION['login_date']) ){
     // セッションを削除（ログアウトする）
     session_destroy();
     // ログインページへ
-    header("Location:login.php");
+    header("Location:index.php");
   }else{
     debug('ログイン有効期限以内です。');
     //最終ログイン日時を現在日時に更新

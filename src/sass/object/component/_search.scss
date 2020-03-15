@@ -1,0 +1,29 @@
+@import "../../foundation/_mediaqueries";
+
+/*========================================
+  検索エリア
+========================================*/
+
+.search-title {
+  overflow: hidden;
+  margin-bottom: 30px;
+  padding: 5px 10px;
+  height: 40px;
+  background: #f6f5f4;
+  line-height: 40px;
+}
+
+.search-left {
+  float: left;
+}
+
+.search-right {
+  float: right;
+}
+
+.search-title .total-num {
+  padding-right: 5px;
+  font-weight: bold;
+  font-size: 18px;
+  font-family: 'Montserrat', sans-serif;
+}
