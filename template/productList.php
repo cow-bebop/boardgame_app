@@ -35,8 +35,9 @@ $currentMinNum = (($currentPageNum-1)*$listSpan); //1ページ目なら(1-1)*20 
 $dbProductData = getProductList($currentMinNum, $category, $sort);
 // DBからカテゴリデータを取得
 $dbCategoryData = getCategory();
-//debug('DBデータ：'.print_r($dbFormData,true));
-//debug('カテゴリデータ：'.print_r($dbCategoryData,true));
+// debug('DBデータ：'.print_r($dbFormData,true));
+// debug('DB商品データ：'.print_r($dbProductData,true));
+// debug('カテゴリデータ：'.print_r($dbCategoryData,true));
 
 debug('画面表示処理終了 <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<');
 ?>
@@ -54,7 +55,7 @@ require('head.php');
 
     <!-- メインコンテンツ -->
     <div id="contents" class="site-width">
-
+      <div class="sidebar-flex">
       <!-- サイドバー -->
       <section id="sidebar">
         <form name="" method="get">
@@ -118,7 +119,7 @@ require('head.php');
         <?php pagination($currentPageNum, $dbProductData['total_page']); ?>
         
       </section>
-
+      </div>
     </div>
 
     <!-- footer -->

@@ -148,10 +148,11 @@ require('head.php');
     <!-- メインコンテンツ -->
     <div id="contents" class="site-width">
       <h1 class="page-title"><?php echo (!$edit_flg) ? 'ゲームを出品する' : 'ゲームを編集する'; ?></h1>
+      <div class="sidebar-flex">
       <!-- Main -->
       <section id="main" >
         <div class="form-container">
-          <form action="" method="post" class="form" enctype="multipart/form-data" style="width:100%;box-sizing:border-box;">
+          <form action="" method="post" class="form" enctype="multipart/form-data">
             <div class="area-msg">
               <?php 
               if(!empty($err_msg['common'])) echo $err_msg['common'];
@@ -264,7 +265,7 @@ require('head.php');
       require('sidebar_mypage.php');
       ?>
     </div>
-
+    </div>
     <!-- footer -->
     <?php
     require('footer.php'); 

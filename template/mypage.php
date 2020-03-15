@@ -58,7 +58,7 @@ require('head.php');
       <h1 class="page-title">MYPAGE</h1>
 
       <!-- Main -->
-      <div class="mypage">
+      <div class="sidebar-flex">
       
       <section id="main">
          <section class="list panel-list u-mb2em">
@@ -146,7 +146,7 @@ require('head.php');
           ?>
         </section>
       </section>
-      
+
       <!-- サイドバー -->
       <?php
         require('sidebar_mypage.php');

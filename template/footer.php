@@ -1,8 +1,8 @@
 <footer id="footer">
-  Copyright <a href="http://webukatu.com/">ウェブカツ!!WEBサービス部</a>. All Rights Reserved.
+  Copyright <a href="index.php">ぼどげみゅ</a>. All Rights Reserved.
 </footer>
 
-<script src="js/vendor/jquery-2.2.2.min.js"></script>
+<script src="common/js/jquery-2.2.2.min.js"></script>
 <script>
   $(function(){
 

@@ -116,6 +116,7 @@ require('head.php');
   <!-- メインコンテンツ -->
   <div id="contents" class="site-width">
     <h1 class="page-title">プロフィール編集</h1>
+    <div class="sidebar-flex">
     <!-- Main -->
     <section id="main" >
       <div class="form-container">
@@ -202,6 +203,7 @@ require('head.php');
     <?php
     require('sidebar_mypage.php');
     ?>
+  </div>
   </div>
 
   <!-- footer -->
