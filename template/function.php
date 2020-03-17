@@ -233,9 +233,9 @@ function isLogin(){
 //DB接続関数
 function dbConnect(){
   //DBへの接続準備
-  $dsn = 'mysql:dbname=boardgame_app;host=localhost;charset=utf8';
-  $user = 'root';
-  $password = 'root';
+  $dsn = 'mysql:dbname=LAA1145668-boardgame1;host=mysql141.phy.lolipop.lan;charset=utf8';
+  $user = 'LAA1145668';
+  $password = 'uzaFPri9hLg8tJK';
   $options = array(
     // SQL実行失敗時にはエラーコードのみ設定
     PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
