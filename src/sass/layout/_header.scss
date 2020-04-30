@@ -1,21 +1,35 @@
 @import "../foundation/_mediaqueries";
 
-
-/*========================================
-  ヘッダー
-========================================*/
-header {
-  margin: 10px 0 30px;
-  width: 100%;
+// ==================================
+// header
+// ==================================
+.header {
+  box-sizing: border-box;
+  max-width: 992px;
   height: 80px;
-}
-
-.header-flex {
+  color: #222;
   display: flex;
+  align-items: center;
   justify-content: space-between;
-}
+  margin: 10px auto 0;
+  z-index: 2;
+  position: relative;
+  transition: .3s;
+  @include pc {
+    width: 100%;
+    padding: 0 1em;
+  }
 
-header h1 {
-  width: 300px;
-  margin: 0;
+  @include sp{
+    height: 60px;
+    padding-right: 10px;
+    padding-left: 10px;
+  }
+  .title {
+    width: 300px;
+    @include sp {
+      width: 200px;
+      text-align: center;
+    }
+  }
 }

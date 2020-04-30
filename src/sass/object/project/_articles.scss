@@ -8,6 +8,9 @@
   font-size: 24px;
   margin: 30px 0;
   color: #364f6b;
+  @include sp {
+    font-size: 16px;
+  }
 }
 
 /*========================================
@@ -21,8 +24,43 @@
 /*========================================
   商品一覧ページ
 ========================================*/
-#top-baner {
+// #top-baner {
+//   width: 100%;
+// }
+
+.index-form {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.index-form-sort {
+  width: 49%;
+  @include sp {
+    width: 100%;
+  }
+}
+
+.index-form-sort + .index-form-sort {
+  @include sp {
+    margin-top: 10px;
+  }
+}
+
+.index-form-select {
+  display: block;
   width: 100%;
+    height: calc(1.5em + .75rem + 2px);
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #495057;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    border-radius: .25rem;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
 }
 
 /*========================================
@@ -48,15 +86,19 @@
   overflow: hidden;
 }
 
-.product-img-container img {
-  width: 100%;
-}
+// .product-img-container img {
+// width: 100%;
+// }
 
 .product-img-container .img-main {
   width: 750px;
   float: left;
   padding-right: 15px;
   box-sizing: border-box;
+  @include pc {
+    width: 100%;
+    padding-right: 0;
+  }
 }
 
 .product-img-container .img-sub {
@@ -65,6 +107,12 @@
   background: #f8f3d4;
   padding: 15px;
   box-sizing: border-box;
+  @include pc {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding: 10px;
+  }
 }
 
 .product-img-container .img-sub:hover {
@@ -77,6 +125,15 @@
 
 .product-img-container .img-sub img:last-child {
   margin-bottom: 0;
+}
+
+.product-img {
+  @include pc {
+    display: block;
+    width: 30%;
+    padding: 5px;
+    box-sizing: border-box;
+  }
 }
 
 .product-detail {

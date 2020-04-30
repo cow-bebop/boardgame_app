@@ -56,7 +56,7 @@ define('MSG02','Emailの形式で入力してください');
 define('MSG03','パスワード（再入力）が合っていません');
 define('MSG04','半角英数字のみご利用いただけます');
 define('MSG05','6文字以上で入力してください');
-define('MSG06','256文字以内で入力してください');
+define('MSG06','500文字以内で入力してください');
 define('MSG07','エラーが発生しました。しばらく経ってからやり直してください。');
 define('MSG08', 'そのEmailは既に登録されています');
 define('MSG09', 'メールアドレスまたはパスワードが違います');
@@ -136,7 +136,7 @@ function validMinLen($str, $key, $min = 6){
   }
 }
 //バリデーション関数（最大文字数チェック）
-function validMaxLen($str, $key, $max = 256){
+function validMaxLen($str, $key, $max = 501){
   if(mb_strlen($str) > $max){
     global $err_msg;
     $err_msg[$key] = MSG06;
@@ -233,9 +233,12 @@ function isLogin(){
 //DB接続関数
 function dbConnect(){
   //DBへの接続準備
-  $dsn = 'mysql:dbname=LAA1145668-boardgame1;host=mysql141.phy.lolipop.lan;charset=utf8';
-  $user = 'LAA1145668';
-  $password = 'uzaFPri9hLg8tJK';
+  // $dsn = 'mysql:dbname=LAA1145668-boardgame1;host=mysql141.phy.lolipop.lan;charset=utf8';
+  // $user = 'LAA1145668';
+  // $password = 'uzaFPri9hLg8tJK';
+  $dsn = 'mysql:dbname=boardgame_app;host=localhost;charset=utf8';
+  $user = 'root';
+  $password = 'root';
   $options = array(
     // SQL実行失敗時にはエラーコードのみ設定
     PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,

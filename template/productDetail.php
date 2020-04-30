@@ -60,7 +60,7 @@ $siteTitle = '商品詳細';
 require('head.php'); 
 ?>
 
-  <body class="page-productDetail page-1colum">
+  <body class="page-1colum">
     <!-- ヘッダー -->
     <?php
       require('header.php'); 
@@ -68,10 +68,8 @@ require('head.php');
 
     <!-- メインコンテンツ -->
     <div id="contents" class="site-width">
-    <div class="sidebar-flex">
       <!-- Main -->
       <section id="main" >
-
         <div class="productDetail-title">
           <span class="badge"><?php echo sanitize($viewData['category']); ?></span>
           <?php echo sanitize($viewData['name']); ?>
@@ -82,9 +80,9 @@ require('head.php');
             <img src="<?php echo showImg(sanitize($viewData['pic1'])); ?>" alt="メイン画像：<?php echo sanitize($viewData['name']); ?>" id="js-switch-img-main">
           </div>
           <div class="img-sub">
-            <img src="<?php echo showImg(sanitize($viewData['pic1'])); ?>" alt="画像1：<?php echo sanitize($viewData['name']); ?>" class="js-switch-img-sub">
-            <img src="<?php echo showImg(sanitize($viewData['pic2'])); ?>" alt="画像2：<?php echo sanitize($viewData['name']); ?>" class="js-switch-img-sub">
-            <img src="<?php echo showImg(sanitize($viewData['pic3'])); ?>" alt="画像3：<?php echo sanitize($viewData['name']); ?>" class="js-switch-img-sub">
+            <img class="product-img js-switch-img-sub" src="<?php echo showImg(sanitize($viewData['pic1'])); ?>" alt="画像1：<?php echo sanitize($viewData['name']); ?>">
+            <img class="product-img js-switch-img-sub" src="<?php echo showImg(sanitize($viewData['pic2'])); ?>" alt="画像2：<?php echo sanitize($viewData['name']); ?>">
+            <img class="product-img js-switch-img-sub" src="<?php echo showImg(sanitize($viewData['pic3'])); ?>" alt="画像3：<?php echo sanitize($viewData['name']); ?>">
           </div>
         </div>
         <div class="product-detail">
@@ -105,7 +103,6 @@ require('head.php');
         </div>
 
       </section>
-      </div>
     </div>
 
     <!-- footer -->

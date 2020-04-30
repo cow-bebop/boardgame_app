@@ -17,13 +17,16 @@
 .panel-list>.panel {
   float: left;
   box-sizing: border-box;
-  margin-bottom: 15px;
+  margin-bottom: 24px;
   padding-right: 15px;
   min-height: 185px;
   width: 25%;
   color: #333;
   text-decoration: none;
   line-height: 1.2em;
+  @include sp {
+    width: 50%;
+  }
 }
 
 a.panel:hover {
