@@ -138,23 +138,22 @@ $siteTitle = (!$edit_flg) ? '商品出品登録' : '商品編集';
 require('head.php'); 
 ?>
 
-  <body class="page-profEdit page-2colum page-logined">
+  <body class="page-logined">
 
     <!-- メニュー -->
     <?php
-    require('header.php'); 
+    require('header.php');
     ?>
 
     <!-- メインコンテンツ -->
     <div id="contents" class="site-width">
       <h1 class="page-title"><?php echo (!$edit_flg) ? 'ゲームを出品する' : 'ゲームを編集する'; ?></h1>
-      <div class="sidebar-flex">
       <!-- Main -->
       <section id="main" >
         <div class="form-container">
           <form action="" method="post" class="form" enctype="multipart/form-data">
             <div class="area-msg">
-              <?php 
+              <?php
               if(!empty($err_msg['common'])) echo $err_msg['common'];
               ?>
             </div>
@@ -208,8 +207,8 @@ require('head.php');
               if(!empty($err_msg['price'])) echo $err_msg['price'];
               ?>
             </div>
-            <div style="overflow:hidden;">
-              <div class="imgDrop-container">
+            <div class="registProduct-img">
+              <div class="registProduct-img-container">
                 画像1（メイン画像）
                 <label class="area-drop <?php if(!empty($err_msg['pic1'])) echo 'err'; ?>">
                   <input type="hidden" name="MAX_FILE_SIZE" value="3145728">
@@ -223,7 +222,7 @@ require('head.php');
                   ?>
                 </div>
               </div>
-              <div class="imgDrop-container">
+              <div class="registProduct-img-container">
                 画像２
                 <label class="area-drop <?php if(!empty($err_msg['pic2'])) echo 'err'; ?>">
                   <input type="hidden" name="MAX_FILE_SIZE" value="3145728">
@@ -237,7 +236,7 @@ require('head.php');
                   ?>
                 </div>
               </div>
-              <div class="imgDrop-container">
+              <div class="registProduct-img-container">
                 画像３
                 <label class="area-drop <?php if(!empty($err_msg['pic3'])) echo 'err'; ?>">
                   <input type="hidden" name="MAX_FILE_SIZE" value="3145728">
@@ -259,12 +258,6 @@ require('head.php');
           </form>
         </div>
       </section>
-
-      <!-- サイドバー -->
-      <?php
-      require('sidebar_mypage.php');
-      ?>
-    </div>
     </div>
     <!-- footer -->
     <?php

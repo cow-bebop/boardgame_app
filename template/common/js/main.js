@@ -4,7 +4,11 @@ $(function() {
     $(".js-toggle-sp-menu").on("click", function() {
       $(this).toggleClass("active");
       $(".js-toggle-sp-menu-target").toggleClass("active");
-      console.log("open");
+    });
+
+    // mypageナビメニュー
+    $(".js-toggle-mypage-menu").on("click", function() {
+      $(".mypage-nav-menu").toggleClass("active");
     });
 
     // フッターを最下部に固定

@@ -16,6 +16,7 @@
         }else{
       ?>
       <li class="menu-item"><a class="menu-link" href="mypage.php">マイページ</a></li>
+      <li class="menu-item"><a class="menu-link" href="registProduct.php">商品を出品する</a></li>
       <li class="menu-item"><a class="menu-link" href="logout.php">ログアウト</a></li>
       <?php
         }

@@ -16,6 +16,11 @@ require('auth.php');
 // 画面表示用データ取得
 //================================
 $u_id = $_SESSION['user_id'];
+
+// DBからユーザーデータを取得
+$userData = getUser($u_id);
+debug('取得したユーザー情報：'.print_r($userData,true));
+
 // DBから商品データを取得
 $productData = getMyProducts($u_id);
 // DBから連絡掲示板データを取得
@@ -36,7 +41,8 @@ $siteTitle = 'マイページ';
 require('head.php'); 
 ?>
 
-  <body class="page-mypage page-2colum page-logined">
+
+  <body class="page-logined">
     <style>
       #main{
         border: none !important;
@@ -44,9 +50,25 @@ require('head.php');
     </style>
     
     <!-- メニュー -->
-    <?php
-      require('header.php'); 
-    ?>
+    <header class="header js-float-menu">
+  <h1 class="title"><a href="index.php"><img class="header-logo" src="common/img/logo.png" alt=""></a></h1>
+  <nav class="mypage-nav-menu js-toggle-sp-menu-target">
+    <ul class="mypage-menu">
+      <li class="mypage-menu-item"><a class="menu-link" href="mypage.php">マイページ</a></li>
+      <li class="mypage-menu-item"><a class="menu-link" href="registProduct.php">商品を出品する</a></li>
+      <li class="mypage-menu-item"><a class="menu-link" href="profEdit.php">プロフィール編集</a></li>
+      <li class="mypage-menu-item"><a class="menu-link" href="passEdit.php">パスワード変更</a></li>
+      <li class="mypage-menu-item"><a class="menu-link" href="withdraw.php">退会</a></li>
+      <li class="mypage-menu-item"><a class="menu-link" href="logout.php">ログアウト</a></li>
+    </ul>
+  </nav>
+  <div class="mypage-setting js-toggle-mypage-menu">
+    <div class="mypage-setting-img">
+      <img src="<?php echo $userData['pic']; ?>" alt="マイプロフィール画像">
+    </div>
+    <p>ナビメニュー</p>
+  </div>
+</header>
     
     <p id="js-show-msg" style="display:none;" class="msg-slide">
       <?php echo getSessionFlash('msg_success'); ?>
@@ -58,8 +80,6 @@ require('head.php');
       <h1 class="page-title">MYPAGE</h1>
 
       <!-- Main -->
-      <div class="sidebar-flex">
-      
       <section id="main">
          <section class="list panel-list u-mb2em">
            <h2 class="title" style="margin-bottom:15px;">
@@ -83,7 +103,7 @@ require('head.php');
             ?>
          </section>
          
-        <section class="list list-table u-mb2em">
+        <section class="list list-table mt-2em">
           <h2 class="title">
             連絡掲示板一覧
           </h2>
@@ -104,7 +124,7 @@ require('head.php');
              ?>
                  <tr>
                     <td><?php echo sanitize(date('Y.m.d H:i:s',strtotime($msg['send_date']))); ?></td>
-                    <td>◯◯ ◯◯</td>
+                    <td><?php echo sanitize($val['name']); ?></td>
                     <td><a href="msg.php?m_id=<?php echo sanitize($val['id']); ?>"><?php echo mb_substr(sanitize($msg['msg']),0,40); ?>...</a></td>
                 </tr>
              <?php
@@ -124,7 +144,7 @@ require('head.php');
           </table>
         </section>
         
-        <section class="list panel-list">
+        <section class="list panel-list mt-2em">
           <h2 class="title" style="margin-bottom:15px;">
             お気に入り一覧
           </h2>
@@ -149,10 +169,9 @@ require('head.php');
 
       <!-- サイドバー -->
       <?php
-        require('sidebar_mypage.php');
+        // require('sidebar_mypage.php');
       ?>
       </div>
-    </div>
 
     <!-- footer -->
     <?php

@@ -61,17 +61,19 @@ input[type="submit"]:hover {
 
 .page-1colum .form-container {
   margin: 80px auto;
+  @include sp {
+    margin-top: 50px;
+  }
 }
 
 .form {
   margin: 0 auto;
   padding: 30px;
-  width: 600px;
+  max-width: 600px;
   border: 5px solid #f1f1f1;
   box-sizing: border-box;
-
-  @include pc {
-    max-width: 600px;
+  @include sp {
+    max-width: 100%;
   }
 }
 
@@ -116,6 +118,9 @@ input[type="submit"]:hover {
   line-height: 150px;
   position: relative;
   box-sizing: border-box;
+  @include sp {
+    height: 300px;
+  }
 }
 
 .form .input-file {
@@ -126,7 +131,9 @@ input[type="submit"]:hover {
   top: 0;
   left: 0;
   z-index: 2;
-  /* 必ずz-indexをつけないと登録画像を変更する際にドラッグ＆ドロップできなくなる*/
+  @include sp {
+    height: 300px;
+  }
 }
 
 .form .prev-img {
@@ -141,6 +148,9 @@ input[type="submit"]:hover {
   float: left;
   padding-right: 15px;
   box-sizing: border-box;
+  @include sp {
+    width: 100%;
+  }
 }
 
 .form .counter-text {
@@ -154,11 +164,11 @@ input[type="submit"]:hover {
   overflow: hidden;
 }
 
-.form-group>input {
+.form-group > input {
   float: left;
 }
 
-.form-group>.option {
+.form-group > .option {
   position: relative;
   top: 40px;
   display: block;

@@ -105,7 +105,7 @@ $siteTitle = 'パスワード変更';
 require('head.php'); 
 ?>
 
-  <body class="page-passEdit page-2colum page-logined">
+  <body class="page-logined">
     <style>
       .form{
         margin-top: 50px;
@@ -162,12 +162,6 @@ require('head.php');
           </form>
         </div>
       </section>
-      
-      <!-- サイドバー -->
-      <?php
-      require('sidebar_mypage.php');
-      ?>
-      
     </div>
 
     <!-- footer -->

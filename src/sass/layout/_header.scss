@@ -14,19 +14,22 @@
   margin: 10px auto 0;
   z-index: 2;
   position: relative;
-  transition: .3s;
+  transition: 0.3s;
   @include pc {
     width: 100%;
     padding: 0 1em;
   }
 
-  @include sp{
+  @include sp {
     height: 60px;
     padding-right: 10px;
     padding-left: 10px;
   }
   .title {
     width: 300px;
+    @include pc {
+      width: 240px;
+    }
     @include sp {
       width: 200px;
       text-align: center;

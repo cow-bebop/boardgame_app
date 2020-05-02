@@ -3,9 +3,13 @@
 /* テーブルリスト
 ========================================*/
 
-.list-table>table {
+.list-table > table {
   width: 100%;
   border-spacing: 0 5px;
+  box-sizing: border-box;
+  display: block;
+  overflow-x: scroll;
+  white-space: nowrap;
 }
 
 .list-table th,
@@ -17,7 +21,7 @@
   text-align: left;
 }
 
-.list-table>.table>tbody td {
+.list-table > .table > tbody td {
   border-right: none;
   background: #f8f3d4;
 }

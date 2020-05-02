@@ -21,12 +21,44 @@
   justify-content: space-between;
 }
 
+.mypage-setting {
+  width: 150px;
+  height: 100px;
+  margin-top: 10px;
+  @include sp {
+    width: 100px;
+    height: 60px;
+    margin-top: 0;
+  }
+  & p {
+    text-align: center;
+    font-size: 12px;
+  }
+}
+
+.mypage-setting-img {
+  width: 100px;
+  height: 100px;
+  margin-top: 10px;
+  margin: 10px auto 0;
+  &:hover {
+    cursor: pointer;
+  }
+  @include sp {
+    width: 60px;
+    height: 60px;
+    margin-top: 0;
+  }
+}
+
+.mypage-setting-img img {
+  width: 100%;
+  border-radius: 10%;
+}
+
 /*========================================
   商品一覧ページ
 ========================================*/
-// #top-baner {
-//   width: 100%;
-// }
 
 .index-form {
   display: flex;
@@ -85,10 +117,6 @@
 .product-img-container {
   overflow: hidden;
 }
-
-// .product-img-container img {
-// width: 100%;
-// }
 
 .product-img-container .img-main {
   width: 750px;
@@ -331,6 +359,23 @@
 
 .area-bord .msg-cnt.msg-right .avatar {
   float: right;
+}
+
+/*========================================
+  商品編集画面
+========================================*/
+.registProduct-img {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.registProduct-img-container {
+  width: 30%;
+  box-sizing: border-box;
+  @include sp {
+    width: 100%;
+  }
 }
 
 /*========================================

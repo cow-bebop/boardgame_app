@@ -96,14 +96,14 @@ debug('画面表示処理終了 <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 ?>
 <?php
 $siteTitle = 'ログイン';
-require('head.php'); 
+require('head.php');
 ?>
 
   <body class="page-login page-1colum">
 
     <!-- ヘッダー -->
     <?php
-      require('header.php'); 
+      require('header.php');
     ?>
     <p id="js-show-msg" style="display:none;" class="msg-slide">
       <?php echo getSessionFlash('msg_success'); ?>
