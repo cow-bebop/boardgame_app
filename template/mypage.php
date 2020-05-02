@@ -123,8 +123,8 @@ require('head.php');
                     $msg = array_shift($val['msg']);
              ?>
                  <tr>
-                    <td><?php echo sanitize(date('Y.m.d H:i:s',strtotime($msg['send_date']))); ?></td>
-                    <td><?php echo sanitize($val['name']); ?></td>
+                    <td><?php echo sanitize(date('Y.m.d H:i',strtotime($msg['send_date']))); ?></td>
+                    <td><?php echo sanitize(getUser($val['buy_user'])['username']); ?></td>
                     <td><a href="msg.php?m_id=<?php echo sanitize($val['id']); ?>"><?php echo mb_substr(sanitize($msg['msg']),0,40); ?>...</a></td>
                 </tr>
              <?php
@@ -166,11 +166,6 @@ require('head.php');
           ?>
         </section>
       </section>
-
-      <!-- サイドバー -->
-      <?php
-        // require('sidebar_mypage.php');
-      ?>
       </div>
 
     <!-- footer -->

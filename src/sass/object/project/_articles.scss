@@ -149,6 +149,9 @@
 
 .product-img-container .img-sub img {
   margin-bottom: 15px;
+  @include pc {
+    margin-bottom: 0;
+  }
 }
 
 .product-img-container .img-sub img:last-child {
@@ -225,30 +228,26 @@
   padding: 15px;
   overflow: hidden;
   margin-bottom: 15px;
-}
-
-.msg-info .avatar {
-  width: 80px;
-  height: 80px;
-  border-radius: 40px;
-}
-
-.msg-info .avatar-img {
-  text-align: center;
-  width: 100px;
-  float: left;
-}
-
-.msg-info .avatar-info {
-  float: left;
-  padding-left: 15px;
-  width: 500px;
-}
-
-.msg-info .product-info {
-  float: left;
-  padding-left: 15px;
-  width: 315px;
+  & .avatar {
+    width: 80px;
+    height: 80px;
+    border-radius: 40px;
+  }
+  & .avatar-img {
+    text-align: center;
+    width: 100px;
+    float: left;
+  }
+  & .avatar-info {
+    float: left;
+    padding-left: 15px;
+    width: 500px;
+  }
+  & .product-info {
+    float: left;
+    padding-left: 15px;
+    width: 315px;
+  }
 }
 
 .msg-info .product-info .left,
@@ -269,6 +268,7 @@
   overflow-y: scroll;
   background: #f8f3d4;
   padding: 15px;
+  position: relative;
 }
 
 .area-send-msg {
@@ -290,32 +290,83 @@
   margin-top: 0;
 }
 
-.area-bord .msg-cnt {
-  width: 80%;
+.area-bord .msg-cnt.msg-left {
+  width: 85%;
   overflow: hidden;
   margin-bottom: 30px;
+  @include pc {
+    display: flex;
+    flex-wrap: wrap;
+    box-sizing: border-box;
+    justify-content: space-between;
+    width: 100%;
+  }
+}
+
+.area-bord .msg-cnt.msg-right {
+  width: 85%;
+  overflow: hidden;
+  margin-bottom: 30px;
+  @include pc {
+    display: flex;
+    flex-flow: row-reverse;
+    flex-wrap: wrap;
+    box-sizing: border-box;
+    justify-content: space-between;
+    width: 100%;
+  }
 }
 
 .area-bord .msg-cnt .avatar {
-  width: 5.2%;
+  width: 100px;
   overflow: hidden;
   float: left;
+  @include pc {
+    width: 50px;
+  }
 }
 
 .area-bord .msg-cnt .avatar img {
-  width: 40px;
-  height: 40px;
-  border-radius: 20px;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
   float: left;
+  @include pc {
+    object-fit: cover;
+    width: 50px;
+    height: 50px;
+  }
 }
 
 .area-bord .msg-cnt .msg-inrTxt {
-  width: 85%;
+  width: 80%;
   float: left;
   border-radius: 5px;
   padding: 10px;
   margin: 0 0 0 25px;
   position: relative;
+  word-break: break-all;
+  @include pc {
+    width: 85%;
+    margin: 0 0 0 5px;
+  }
+  @include sp {
+    width: 73%;
+  }
+}
+
+.msg-date {
+  font-size: 0.5em;
+
+  @include pc {
+    width: 100%;
+    margin-top: 5px;
+  }
+}
+
+.msg-date.msg-left {
+  margin-left: 30px;
+  padding-left: 30px;
 }
 
 .area-bord .msg-cnt.msg-left .msg-inrTxt {
@@ -340,6 +391,9 @@
 .area-bord .msg-cnt.msg-right .msg-inrTxt {
   background: #d2eaf0;
   margin: 0 25px 0 0;
+  @include pc {
+    margin: 0 0 0 5px;
+  }
 }
 
 .area-bord .msg-cnt.msg-right .msg-inrTxt > .triangle {

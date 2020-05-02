@@ -163,7 +163,9 @@ require('head.php');
                         <span class="triangle"></span>
                         <?php echo sanitize($val['msg']); ?>
                       </p>
-                      <div style="font-size:.5em;"><?php echo sanitize($val['send_date']); ?></div>
+                      <p class="msg-date msg-left tal">
+                        <?php echo sanitize($val['send_date']); ?>
+                      </p>
                     </div>
             <?php
                   }else{
@@ -176,7 +178,7 @@ require('head.php');
                         <span class="triangle"></span>
                         <?php echo sanitize($val['msg']); ?>
                       </p>
-                      <div style="font-size:.5em;text-align:right;"><?php echo sanitize($val['send_date']); ?></div>
+                      <div class="msg-date tar"><?php echo sanitize($val['send_date']); ?></div>
                     </div>
             <?php
                   }

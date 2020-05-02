@@ -1114,6 +1114,7 @@ input[type="submit"]:hover {
 }
 
 .area-bord {
+  position: relative;
   height: 500px;
   padding: 15px;
   overflow-y: scroll;
@@ -1139,32 +1140,48 @@ input[type="submit"]:hover {
   float: right;
 }
 
-.area-bord .msg-cnt {
-  width: 80%;
+.area-bord .msg-cnt.msg-left {
+  width: 85%;
+  margin-bottom: 30px;
+  overflow: hidden;
+}
+
+.area-bord .msg-cnt.msg-right {
+  width: 85%;
   margin-bottom: 30px;
   overflow: hidden;
 }
 
 .area-bord .msg-cnt .avatar {
-  width: 5.2%;
+  width: 100px;
   float: left;
   overflow: hidden;
 }
 
 .area-bord .msg-cnt .avatar img {
-  width: 40px;
-  height: 40px;
+  width: 100px;
+  height: 100px;
   float: left;
-  border-radius: 20px;
+  border-radius: 50%;
 }
 
 .area-bord .msg-cnt .msg-inrTxt {
   position: relative;
-  width: 85%;
+  width: 80%;
   margin: 0 0 0 25px;
   padding: 10px;
   float: left;
   border-radius: 5px;
+  word-break: break-all;
+}
+
+.msg-date {
+  font-size: 0.5em;
+}
+
+.msg-date.msg-left {
+  margin-left: 30px;
+  padding-left: 30px;
 }
 
 .area-bord .msg-cnt.msg-left .msg-inrTxt {
@@ -1256,11 +1273,22 @@ input[type="submit"]:hover {
 .mt-2em {
   margin-top: 2em;
 }
+
+.tal {
+  -moz-text-align-last: left;
+       text-align-last: left;
+}
+
+.tar {
+  text-align: right;
+}
+
 @media screen and (max-width: 1200px) {
   body {
     color: #444;
   }
 }
+
 @media screen and (max-width: 992px) {
   body {
     color: #444;
@@ -1299,6 +1327,9 @@ input[type="submit"]:hover {
     width: 100%;
     padding: 10px;
   }
+  .product-img-container .img-sub img {
+    margin-bottom: 0;
+  }
   .product-img {
     -webkit-box-sizing: border-box;
             box-sizing: border-box;
@@ -1306,12 +1337,64 @@ input[type="submit"]:hover {
     width: 30%;
     padding: 5px;
   }
+  .area-bord .msg-cnt.msg-left {
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    width: 100%;
+  }
+  .area-bord .msg-cnt.msg-right {
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: reverse;
+        -ms-flex-flow: row-reverse;
+            flex-flow: row-reverse;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    width: 100%;
+  }
+  .area-bord .msg-cnt .avatar {
+    width: 50px;
+  }
+  .area-bord .msg-cnt .avatar img {
+    width: 50px;
+    height: 50px;
+    -o-object-fit: cover;
+       object-fit: cover;
+  }
+  .area-bord .msg-cnt .msg-inrTxt {
+    width: 85%;
+    margin: 0 0 0 5px;
+  }
+  .msg-date {
+    width: 100%;
+    margin-top: 5px;
+  }
+  .area-bord .msg-cnt.msg-right .msg-inrTxt {
+    margin: 0 0 0 5px;
+  }
 }
+
 @media screen and (max-width: 768px) {
   body {
     color: #444;
   }
 }
+
 @media screen and (max-width: 576px) {
   body {
     color: #444;
@@ -1452,6 +1535,9 @@ input[type="submit"]:hover {
   }
   .index-form-sort + .index-form-sort {
     margin-top: 10px;
+  }
+  .area-bord .msg-cnt .msg-inrTxt {
+    width: 73%;
   }
   .registProduct-img-container {
     width: 100%;
