@@ -106,7 +106,7 @@ $siteTitle = 'プロフィール編集';
 require('head.php'); 
 ?>
 
-<body class="page-profEdit page-2colum page-logined">
+<body class="page-logined">
 
   <!-- メニュー -->
   <?php
@@ -116,7 +116,6 @@ require('head.php');
   <!-- メインコンテンツ -->
   <div id="contents" class="site-width">
     <h1 class="page-title">プロフィール編集</h1>
-    <div class="sidebar-flex">
     <!-- Main -->
     <section id="main" >
       <div class="form-container">
@@ -196,14 +195,7 @@ require('head.php');
             <input type="submit" class="btn btn-mid" value="変更する">
           </div>
         </form>
-      </div>
     </section>
-
-    <!-- サイドバー -->
-    <?php
-    require('sidebar_mypage.php');
-    ?>
-  </div>
   </div>
 
   <!-- footer -->

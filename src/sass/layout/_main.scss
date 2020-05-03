@@ -16,7 +16,7 @@
 #main {
   min-height: 80vh;
   @include sp {
-    min-height: auto;
+    min-height: 60vh;
   }
 }
 

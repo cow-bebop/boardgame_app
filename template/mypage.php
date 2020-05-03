@@ -64,7 +64,7 @@ require('head.php');
   </nav>
   <div class="mypage-setting js-toggle-mypage-menu">
     <div class="mypage-setting-img">
-      <img src="<?php echo $userData['pic']; ?>" alt="マイプロフィール画像">
+      <img src="<?php echo $userData['pic']? $userData['pic']: 'common/img/chara01.jpg'; ?>" alt="マイプロフィール画像">
     </div>
     <p>ナビメニュー</p>
   </div>
