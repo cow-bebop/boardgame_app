@@ -87,7 +87,7 @@ if(!empty($_POST)){
       //最大文字数チェック
       validMaxLen($comment, 'comment', 500);
     }
-    if($dbFormData['price'] != $price){ //前回まではキャストしていたが、ゆるい判定でもいい
+    if($dbFormData['price'] != $price){
       //未入力チェック
       validRequired($price, 'price');
       //半角数字チェック

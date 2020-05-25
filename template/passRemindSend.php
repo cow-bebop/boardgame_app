@@ -57,24 +57,23 @@ if(!empty($_POST)){
           //メールを送信
           $from = 'info@webukatu.com';
           $to = $email;
-          $subject = '【パスワード再発行認証】｜WEBUKATUMARKET';
+          $subject = '【パスワード再発行認証】｜ぼどげみゅ';
           //EOTはEndOfFileの略。ABCでもなんでもいい。先頭の<<<の後の文字列と合わせること。最後のEOTの前後に空白など何も入れてはいけない。
           //EOT内の半角空白も全てそのまま半角空白として扱われるのでインデントはしないこと
           $comment = <<<EOT
 本メールアドレス宛にパスワード再発行のご依頼がありました。
 下記のURLにて認証キーをご入力頂くとパスワードが再発行されます。
 
-パスワード再発行認証キー入力ページ：http://localhost:8888/webservice_practice07/passRemindRecieve.php
+パスワード再発行認証キー入力ページ：http://localhost:8888/hoge/passRemindRecieve.php
 認証キー：{$auth_key}
 ※認証キーの有効期限は30分となります
 
 認証キーを再発行されたい場合は下記ページより再度再発行をお願い致します。
-http://localhost:8888/webservice_practice07/passRemindSend.php
+http://localhost:8888/hoge/passRemindSend.php
 
 ////////////////////////////////////////
-ウェブカツマーケットカスタマーセンター
-URL  http://webukatu.com/
-E-mail info@webukatu.com
+ぼどげみゅカスタマーセンター
+URL  http://bodogemyu.site/
 ////////////////////////////////////////
 EOT;
           sendMail($from, $to, $subject, $comment);
